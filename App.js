@@ -32,7 +32,7 @@ export default function App() {
     if (SignedIn) {
       setTimeout(() => {
         setShowLoadingNavigation(false);
-      }, 1000);
+      }, 2000);
     }
   }, [SignedIn]);
 

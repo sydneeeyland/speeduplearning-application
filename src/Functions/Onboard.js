@@ -13,6 +13,10 @@ export const CheckLocalStorage = async (
     const SignedStatus = await AsyncStorage.getItem("@user");
     SignedStatus ? setSignedIn(true) : setSignedIn(false);
 
+    // await AsyncStorage.removeItem("@user");
+    // await AsyncStorage.removeItem("@role");
+    // await AsyncStorage.removeItem("@OnboardSuccess");
+
     setShowLoading(false);
   } catch (err) {
     console.log(err);

@@ -1,4 +1,4 @@
-import Logo from "../Assets/Logo.jpg";
+import Logo from "../Assets/Logo.png";
 import Slide1 from "../Assets/Onboard/Slide1.png";
 import Slide2 from "../Assets/Onboard/Slide2.png";
 import Slide3 from "../Assets/Onboard/Slide3.png";

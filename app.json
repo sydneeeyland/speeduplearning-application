@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "speeduplearning",
+    "name": "SpeedUp",
     "slug": "speeduplearning",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/Logo.jpg",
+    "icon": "./src/assets/Logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/Logo.jpg",
+      "image": "./src/assets/Logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/Logo.jpg",
+        "foregroundImage": "./src/assets/Logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sydenciso.speeduplearning"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "80248f28-4e71-454a-bc79-27518f5b3c21"
+      }
     }
   }
 }
