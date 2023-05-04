@@ -2,7 +2,11 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const baseUrl = "http://192.168.73.127:3000/speedup";
+// Develop
+// const baseUrl = "http://192.168.73.127:3000/speedup";
+
+// Production
+const baseUrl = "https://jellyfish-app-bn4ss.ondigitalocean.app/speedup";
 
 export const HandleSignIn = async (
   setShowLoading,
