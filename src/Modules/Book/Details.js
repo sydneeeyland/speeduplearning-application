@@ -4,7 +4,15 @@ import moment from "moment";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Components
-import { View, Text, Image, ScrollView, Button, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  Button,
+  TextInput,
+  ActivityIndicator,
+} from "react-native";
 import { Calendar } from "react-native-calendars";
 import { SelectList } from "react-native-dropdown-select-list";
 import Modal from "react-native-modal";
@@ -25,6 +33,7 @@ import { SubmitBooking } from "../../Functions/Book";
 import { Time, TypesOfClass } from "../../Constant/Application";
 
 const Details = ({ selected, navigation }) => {
+  const [showLoading, setShowLoading] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
   const [disableSubmit, setDisableSubmit] = useState(true);
@@ -140,13 +149,22 @@ const Details = ({ selected, navigation }) => {
           </View>
 
           <View style={{ marginTop: 20 }}>
-            <Button
-              title="BOOK"
-              disabled={disableSubmit}
-              onPress={() =>
-                SubmitBooking(payload, setRequestResponse, navigation)
-              }
-            />
+            {showLoading ? (
+              <ActivityIndicator size="small" color="#0000ff" />
+            ) : (
+              <Button
+                title="BOOK"
+                disabled={disableSubmit}
+                onPress={() =>
+                  SubmitBooking(
+                    payload,
+                    setRequestResponse,
+                    navigation,
+                    setShowLoading
+                  )
+                }
+              />
+            )}
           </View>
 
           <Modal isVisible={showCalendar}>

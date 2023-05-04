@@ -6,9 +6,9 @@ export const SignInStyle = StyleSheet.create({
     alignItems: "center",
   },
   hero: {
-    width: 250,
-    height: 250,
-    marginTop: 70,
+    width: "100%",
+    height: "100%",
+    marginBottom: 10,
   },
   slogan: {
     fontSize: 26,

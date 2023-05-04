@@ -97,4 +97,10 @@ export const CalendarStyle = StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
   },
+  hairlineSeparator: {
+    marginTop: 10,
+    marginBottom: 10,
+    borderBottomColor: "black",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
 });

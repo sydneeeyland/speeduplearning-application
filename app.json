@@ -4,10 +4,10 @@
     "slug": "speeduplearning",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/Logo.png",
+    "icon": "Logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/Logo.png",
+      "image": "Logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -15,13 +15,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "userInterfaceStyle": "light"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/Logo.png",
+        "foregroundImage": "Logo.png",
         "backgroundColor": "#ffffff"
       },
+      "userInterfaceStyle": "light",
       "package": "com.sydenciso.speeduplearning"
     },
     "web": {
@@ -29,7 +31,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "80248f28-4e71-454a-bc79-27518f5b3c21"
+        "projectId": "8667626e-f83d-4574-b59d-1bb924000e37"
       }
     }
   }

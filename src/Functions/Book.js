@@ -2,7 +2,7 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const baseUrl = "https://jellyfish-app-bn4ss.ondigitalocean.app/speedup";
+const baseUrl = "http://192.168.73.127:3000/speedup";
 
 export const GetTeachers = async (
   setListData,
@@ -14,7 +14,7 @@ export const GetTeachers = async (
   if (user !== undefined) {
     isRefresh && setRefreshing(true);
     const request = await axios.post(`${baseUrl}/booking/view`, {
-      accountId: "643e0a2dfe827a8206facb0f",
+      accountId: user,
     });
     const response = await request.data;
 
@@ -29,15 +29,16 @@ export const GetTeachers = async (
 export const SubmitBooking = async (
   payload,
   setRequestResponse,
-  navigation
+  navigation,
+  setShowLoading
 ) => {
+  setShowLoading(true);
   const request = await axios.post(`${baseUrl}/schedule/create`, payload);
   const response = await request.data;
-
   setRequestResponse(response);
-
   if (response.success) {
     navigation.navigate("List");
     alert(response.message);
+    setShowLoading(false);
   }
 };

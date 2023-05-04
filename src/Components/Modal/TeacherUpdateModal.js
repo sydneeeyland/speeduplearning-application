@@ -9,17 +9,20 @@ import { View, Text, Modal, Pressable, ScrollView, Button } from "react-native";
 import { CalendarStyle } from "../../Assets/Styles/Calendar";
 
 // Functions
-import { UpdateStudentStatus } from "../../Functions/Calendar";
+import { UpdateTeacherStatus } from "../../Functions/Calendar";
 
-export default function StudentUpdateModal({
+export default function TeacherUpdateModal({
   showModal,
   setShowModal,
-  participant,
+  schedule,
 }) {
   const [selectedStatus, setSelectedStatus] = useState();
-  const Status = [{ key: "1", value: "Student Unavailable" }];
+  const Status = [
+    { key: "1", value: "Cancelled" },
+    { key: "2", value: "Teacher Unavailable" },
+  ];
   const payload = {
-    ...participant,
+    ...schedule,
     status: selectedStatus,
   };
   return (
@@ -54,7 +57,7 @@ export default function StudentUpdateModal({
             <View style={{ marginTop: 20 }}>
               <Button
                 title="Update"
-                onPress={() => UpdateStudentStatus(payload, setShowModal)}
+                onPress={() => UpdateTeacherStatus(payload, setShowModal)}
               />
             </View>
           </ScrollView>

@@ -2,7 +2,7 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const baseUrl = "https://jellyfish-app-bn4ss.ondigitalocean.app/speedup";
+const baseUrl = "http://192.168.73.127:3000/speedup";
 
 export const GetCalendarData = async (
   setHomeData,
@@ -25,6 +25,37 @@ export const GetCalendarData = async (
       setHomeData(response.data.calendar);
       setLoading(false);
       isRefresh && setRefreshing(false);
+    }
+  }
+};
+
+export const UpdateStudentStatus = async (payload, setShowModal) => {
+  if (
+    payload.accountId !== "" &&
+    payload.scheduleId !== "" &&
+    payload.status !== ""
+  ) {
+    const request = await axios.post(
+      `${baseUrl}/schedule/update_participant`,
+      payload
+    );
+    const response = await request.data;
+
+    if (response.success) {
+      setShowModal(false);
+      alert(response.message);
+    }
+  }
+};
+
+export const UpdateTeacherStatus = async (payload, setShowModal) => {
+  if (payload.scheduleId !== "" && payload.status !== "") {
+    const request = await axios.post(`${baseUrl}/schedule/update`, payload);
+    const response = await request.data;
+
+    if (response.success) {
+      setShowModal(false);
+      alert(response.message);
     }
   }
 };

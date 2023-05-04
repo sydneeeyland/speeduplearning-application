@@ -87,10 +87,17 @@ export const navigation = {
   ],
   admin: [
     {
-      name: "Chat",
-      component: Chat,
-      icon: IconChat,
-      iconActive: IconChatFilled,
+      name: "Calendar",
+      component: Calendar,
+      icon: IconCalendar,
+      iconActive: IconCalendarFilled,
+      headerShown: false,
+    },
+    {
+      name: "Settings",
+      component: Settings,
+      icon: IconSettings,
+      iconActive: IconSettingsFilled,
       headerShown: false,
     },
   ],

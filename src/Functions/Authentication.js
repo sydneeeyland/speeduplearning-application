@@ -2,7 +2,7 @@
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const baseUrl = "https://jellyfish-app-bn4ss.ondigitalocean.app/speedup";
+const baseUrl = "http://192.168.73.127:3000/speedup";
 
 export const HandleSignIn = async (
   setShowLoading,
@@ -15,7 +15,7 @@ export const HandleSignIn = async (
   setShowLoading(true);
   const request = await axios.post(`${baseUrl}/auth/login`, credentials);
   const response = await request.data;
-  console.log(response);
+
   if (response.success) {
     setDisabled(false);
     setShowLoading(false);

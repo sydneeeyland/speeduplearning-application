@@ -46,7 +46,9 @@ const Signin = ({ navigation, signed }) => {
   return (
     <ScrollView style={{ backgroundColor: "#ffffff" }}>
       <View style={SignInStyle.container}>
-        <Image source={Hero} style={SignInStyle.hero} />
+        <View style={{ height: 350, width: "100%" }}>
+          <Image source={Hero} style={SignInStyle.hero} />
+        </View>
         <Text style={SignInStyle.slogan}>Connect to the</Text>
         <Text style={SignInStyle.slogan}>best mentors</Text>
         <Text style={SignInStyle.sloganMuted}>

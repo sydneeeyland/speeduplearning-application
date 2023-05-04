@@ -77,6 +77,7 @@ export const CalendarStatusColor = {
   Attending: "#cdebff",
   "Teacher Unavailable": "#f05454",
   "Student Unavailable": "#e7db3b",
+  Cancelled: "#f05454",
 };
 
 export const CalendarStatusTextColor = {
@@ -84,4 +85,5 @@ export const CalendarStatusTextColor = {
   Attending: "black",
   "Teacher Unavailable": "white",
   "Student Unavailable": "black",
+  Cancelled: "white",
 };
