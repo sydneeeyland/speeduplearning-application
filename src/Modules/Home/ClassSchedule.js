@@ -1,5 +1,5 @@
 // Components
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, SafeAreaView } from "react-native";
 
 // Images
 import LightningFilled from "../../Assets/Icons/icon-Lightning-Filled.png";
@@ -18,7 +18,7 @@ const TodayClass = ({ data }) => {
     "Brain Pop (2 Participant)": LightningFilled,
   };
   return (
-    <View>
+    <SafeAreaView>
       {data.map((key, index) => (
         <View key={`${index}-${key.id}`}>
           <View style={HomeStyle.todayClassSChedule}>
@@ -50,7 +50,7 @@ const TodayClass = ({ data }) => {
           {index < 1 && <View style={HomeStyle.classScheduleSeparator} />}
         </View>
       ))}
-    </View>
+    </SafeAreaView>
   );
 };
 

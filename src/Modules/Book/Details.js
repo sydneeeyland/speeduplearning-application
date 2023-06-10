@@ -12,6 +12,8 @@ import {
   Button,
   TextInput,
   ActivityIndicator,
+  TouchableOpacity,
+  SafeAreaView
 } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { SelectList } from "react-native-dropdown-select-list";
@@ -22,6 +24,7 @@ import Hero3 from "../../Assets/User/Hero-Image-3.png";
 
 // Styles
 import { DetailsStyle } from "../../Assets/Styles/Details";
+import { ListStyle } from "../../Assets/Styles/List";
 
 // Hook
 import { useChange } from "../../Hooks/CustomHooks";
@@ -77,7 +80,7 @@ const Details = ({ selected, navigation }) => {
 
   return (
     <ScrollView>
-      <View styles={DetailsStyle.container}>
+      <SafeAreaView styles={DetailsStyle.container}>
         <View style={[DetailsStyle.tokenContainer, { marginTop: 20 }]}>
           <View style={DetailsStyle.tokenCard}>
             <Image style={DetailsStyle.teacherImage} source={Hero3} />
@@ -101,11 +104,12 @@ const Details = ({ selected, navigation }) => {
           <View style={DetailsStyle.formInputWrapper}>
             <Text style={DetailsStyle.flexInputAuto}>Select Date</Text>
             <View style={DetailsStyle.flexInputAuto}>
-              <Button
-                title={`${date}`}
+              <TouchableOpacity
                 onPress={() => setShowCalendar(true)}
-                color="gray"
-              />
+                style={ListStyle.listItemSelectDate}
+              >
+                <Text style={ListStyle.listItemSelectDateText}>{date}</Text>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={DetailsStyle.formInputWrapper}>
@@ -132,7 +136,7 @@ const Details = ({ selected, navigation }) => {
             <Text style={DetailsStyle.flexInputAuto}>Student Name</Text>
             <View style={{ flex: 1, borderWidth: 1, borderRadius: 8 }}>
               <TextInput
-                style={{ paddingLeft: 5 }}
+                style={{ paddingLeft: 5, height: 30 }}
                 onChangeText={(val) => useChange("student", val, setPayload)}
               />
             </View>
@@ -142,6 +146,7 @@ const Details = ({ selected, navigation }) => {
             <View style={DetailsStyle.flexInputTextArea}>
               <TextInput
                 style={DetailsStyle.formTextArea}
+                numberOfLines={10}
                 multiline
                 onChangeText={(val) => useChange("note", val, setPayload)}
               />
@@ -163,6 +168,7 @@ const Details = ({ selected, navigation }) => {
                     setShowLoading
                   )
                 }
+                color="gray"
               />
             )}
           </View>
@@ -194,7 +200,7 @@ const Details = ({ selected, navigation }) => {
             </View>
           </Modal>
         </View>
-      </View>
+      </SafeAreaView>
     </ScrollView>
   );
 };

@@ -87,6 +87,8 @@ export const DetailsStyle = StyleSheet.create({
   },
   formTextArea: {
     paddingLeft: 5,
+    paddingTop: 5,
+    textAlignVertical: "top",
   },
   formHeading: {
     textAlign: "center",

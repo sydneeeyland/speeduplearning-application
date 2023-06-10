@@ -37,28 +37,30 @@ export default function App() {
   }, [SignedIn]);
 
   return (
-    <NavigationContainer>
-      <StatusBar barStyle="light-content" backgroundColor="black" />
-      {showLoading ? (
-        <Loading />
-      ) : (
-        <Suspense fallback={<Loading />}>
-          {Onboarded ? (
-            SignedIn ? (
-              showLoadingNavigation ? (
-                <Loading />
+    <>
+      <StatusBar barStyle="light-content" />
+      <NavigationContainer>
+        {showLoading ? (
+          <Loading />
+        ) : (
+          <Suspense fallback={<Loading />}>
+            {Onboarded ? (
+              SignedIn ? (
+                showLoadingNavigation ? (
+                  <Loading />
+                ) : (
+                  <Navigation />
+                )
               ) : (
-                <Navigation />
+                <Authentication setSigned={setSignedIn} />
               )
             ) : (
-              <Authentication setSigned={setSignedIn} />
-            )
-          ) : (
-            <Onboard onGetStarted={() => HandleOnboardAction(setOnboarded)} />
-          )}
-        </Suspense>
-      )}
-    </NavigationContainer>
+              <Onboard onGetStarted={() => HandleOnboardAction(setOnboarded)} />
+            )}
+          </Suspense>
+        )}
+      </NavigationContainer>
+    </>
   );
 }
 

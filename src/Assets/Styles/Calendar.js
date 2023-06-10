@@ -41,8 +41,11 @@ export const CalendarStyle = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
+    height: 550,
   },
   noScheduleLabel: {
+    textAlign: "center",
+    justifyContent: "center",
     fontWeight: "bold",
     fontSize: 24,
   },

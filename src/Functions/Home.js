@@ -3,10 +3,10 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // Develop
-// const baseUrl = "http://192.168.73.127:3000/speedup";
+const baseUrl = "http://192.168.254.123:3000/speedup";
 
 // Production
-const baseUrl = "https://jellyfish-app-bn4ss.ondigitalocean.app/speedup";
+// const baseUrl = "https://jellyfish-app-bn4ss.ondigitalocean.app/speedup";
 
 export const GetHomeData = async (
   setHomeData,

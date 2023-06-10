@@ -17,7 +17,7 @@ export default function StudentUpdateModal({
   participant,
 }) {
   const [selectedStatus, setSelectedStatus] = useState();
-  const Status = [{ key: "1", value: "Student Unavailable" }];
+  const Status = [{ key: "1", value: "Student Unavailable" }, { key: "2", value: "Unbook" }];
   const payload = {
     ...participant,
     status: selectedStatus,

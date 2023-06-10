@@ -10,6 +10,7 @@ import {
   ScrollView,
   RefreshControl,
   Dimensions,
+  SafeAreaView
 } from "react-native";
 import Loading from "../../Components/Loading";
 
@@ -49,7 +50,7 @@ const List = ({ navigation, redirect, setSelected, setToken }) => {
       {loading ? (
         <Loading />
       ) : (
-        <View styles={ListStyle.container}>
+        <SafeAreaView styles={ListStyle.container}>
           <View style={ListStyle.headerCard}>
             <View style={ListStyle.greetingsContainer}>
               <Text style={ListStyle.greetingsLabel}>Hello There !</Text>
@@ -103,7 +104,7 @@ const List = ({ navigation, redirect, setSelected, setToken }) => {
               ))}
             </View>
           </View>
-        </View>
+        </SafeAreaView>
       )}
     </ScrollView>
   );

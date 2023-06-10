@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   ScrollView,
   RefreshControl,
+  SafeAreaView,
 } from "react-native";
 import Loading from "../Components/Loading";
 
@@ -49,7 +50,7 @@ const Home = ({ navigation }) => {
       {loading ? (
         <Loading />
       ) : (
-        <View styles={HomeStyle.container}>
+        <SafeAreaView styles={HomeStyle.container}>
           <View style={HomeStyle.headerCard}>
             <View style={HomeStyle.greetingsContainer}>
               <Text style={HomeStyle.greetingsLabel}>Hello There !</Text>
@@ -114,7 +115,7 @@ const Home = ({ navigation }) => {
               <ClassSchedule data={HomeData.tomorrow} />
             </View>
           </View>
-        </View>
+        </SafeAreaView>
       )}
     </ScrollView>
   );

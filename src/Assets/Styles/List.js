@@ -82,4 +82,12 @@ export const ListStyle = StyleSheet.create({
     height: 55,
     marginBottom: 7,
   },
+  listItemSelectDate: {
+    backgroundColor: "#cdcdcd",
+    padding: 5,
+    borderRadius: 6,
+  },
+  listItemSelectDateText: {
+    textAlign: "center",
+  },
 });

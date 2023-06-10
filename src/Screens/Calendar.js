@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 // Components
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, RefreshControl, SafeAreaView } from "react-native";
 import { Agenda } from "react-native-calendars";
 import Loading from "../Components/Loading";
 
@@ -32,7 +32,7 @@ const Calendar = () => {
   }, []);
 
   return (
-    <View style={CalendarStyle.wrapper}>
+    <SafeAreaView style={CalendarStyle.wrapper}>
       {loading ? (
         <Loading variant="with-text" text="Fetching your schedules...." />
       ) : (
@@ -46,6 +46,7 @@ const Calendar = () => {
               setUserRole
             )
           }
+          displayLoadingIndicator
           refreshing={refreshing}
           scrollEnabled={true}
           showScrollIndicator={true}
@@ -67,14 +68,31 @@ const Calendar = () => {
           )}
           renderEmptyData={() => {
             return (
-              <View style={CalendarStyle.noSchedulePlaceHolder}>
-                <Text style={CalendarStyle.noScheduleLabel}>NO SCHEDULE</Text>
-              </View>
+              <ScrollView
+                refreshControl={
+                  <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={() =>
+                      GetCalendarData(
+                        setCalendarData,
+                        setRefreshing,
+                        setLoading,
+                        true,
+                        setUserRole
+                      )
+                    }
+                  />
+                }
+              >
+                <View style={CalendarStyle.noSchedulePlaceHolder}>
+                  <Text style={CalendarStyle.noScheduleLabel}>NO SCHEDULE</Text>
+                </View>
+              </ScrollView>
             );
           }}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 
